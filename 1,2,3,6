@@ -1,0 +1,63 @@
+// Ex1
+
+const eachSecondLetter = (word) => {
+    let output = '';
+
+    for (let i = 0, lg = word.length; i <= lg; i += 2) {
+        output[i] += word.charAt[i];
+        console.log(output[i]);
+    }
+    return output[i];
+}
+
+// Ex2
+
+const animals = [
+    "pantera",
+    "pirania",
+    "łasica"
+]
+
+let incredible = "Niesamowita";
+
+for (let i = 0, al = animals.length; i < al; i += 1) {
+    animals[i] = incredible + ' ' + animals[i];
+    console.log(animals[i]);
+}
+
+// Ex3
+
+const alfabet = "abcdefghijklmnopqrstuvwxyz";
+
+function randomString(numberOfLetters) {
+    let output = '';
+
+    for (let i = 0; i < numberOfLetters; i += 1) {
+        output += alfabet[Math.floor(Math.random() * alfabet.length)];
+    }
+    return output;
+}
+
+// Ex6
+
+const citySpeedLimit = 50;
+const twoLaneExpresswaySpeedLimit = 120;
+const highwaySpeedLimit = 140;
+
+let speed = 49;
+let typeOfRoad = 'city';
+
+function streetRules(speed, typeOfRoad) {
+    if ((speed < 50) && (typeOfRoad === 'city')) {
+        console.log("Miasto: jedziesz prawidlowo");
+    } else if ((speed > 50) && (typeOfRoad === 'city')) {
+        console.log("Miasto: przekroczyles predkosc");
+    } else if ((speed < 120) && (typeOfRoad === "expressway")) {
+        console.log("Eska:jedziesz prawidlowo");
+    } else if ((speed > 120) && (typeOfRoad === "expressway")) {
+        console.log("Eska: Przekroczyles predkosc");
+    } else if ((speed < 140) && (typeOfRoad === "highway")) {
+        console.log("Autostrada: jedziesz prawidlowo");
+    } else if ((speed > 140) && (typeOfRoad === "highway"))
+        console.log("Autostrada: przekroczyles predkosc");
+}
