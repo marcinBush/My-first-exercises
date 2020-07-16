@@ -25,6 +25,7 @@ for (let i = 0, al = animals.length; i < al; i += 1) {
     console.log(animals[i]);
 }
 
+
 // Ex3
 
 const alfabet = "abcdefghijklmnopqrstuvwxyz";
@@ -37,6 +38,53 @@ function randomString(numberOfLetters) {
     }
     return output;
 }
+
+
+// Ex4
+
+function letterToNumbers(char) {
+    switch (char.toUpperCase()) {
+        case "A":
+            return 4;
+        case "E":
+            return 3;
+        case "I":
+            return 1;
+        case "O":
+            return 0;
+        case "S":
+            return 2;
+        default:
+            return char;
+    }
+}
+
+function encrypt(sentence = '') {
+    let output = '';
+    for (let i = 0; i < sentence.length; i += 1) {
+        output += letterToNumbers(sentence.charAt(i))
+    }
+    return output;
+}
+
+
+//Ex5
+
+function char_count(word = 'koparka') {
+    const output = {};
+
+    for (let i = 0; i < word.length; i += 1) {
+        const char = word.charAt(i);
+        if (output[char]) {
+            output[char] += 1;
+        } else {
+            output[char] = 1;
+        }
+    }
+
+    return output;
+}
+
 
 // Ex6
 
