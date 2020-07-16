@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      document.body.style.height = "10000px";
+      const newDiv = document.createElement("div");
+      document.body.appendChild(newDiv);
+
+      let size = 10;
+      let grow = true;
+
+      newDiv.style.width = "100%";
+      newDiv.style.height = size + "px";
+      newDiv.style.position = "fixed";
+      newDiv.style.marginLeft = "0px";
+      newDiv.style.marginTop = "0px";
+      newDiv.style.backgroundColor = "green";
+
+      const changeHeight = function () {
+        if (size >= window.innerHeight / 2) {
+          grow = !grow;
+        } else if (size <= 0) {
+          grow = !grow;
+        }
+
+        if (grow) {
+          size += 10;
+          newDiv.style.height = size + "px";
+          newDiv.style.backgroundColor = "green";
+        } else {
+          size -= 10;
+          newDiv.style.height = size + "px";
+          newDiv.style.backgroundColor = "red";
+        }
+      };
+
+      window.addEventListener("scroll", changeHeight);
+    </script>
+  </body>
+</html>
